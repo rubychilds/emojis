@@ -1,0 +1,17 @@
+{
+    "mappings": {
+        "emoji":{
+            "properties": {
+                "shortcodes": {"type": "string"},
+                "clean_name": {
+                  "type":     "completion",
+                  "payloads": true
+                },
+                "name": {"type": "string"},
+                "url": {"type": "string"},
+                "description": {"type": "string"},
+                "alternate_names": {"type": "string"}
+            }
+        }
+    }
+}
