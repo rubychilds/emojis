@@ -17,6 +17,7 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'', include('polls.urls')), # can specify here what you want endpoint to look like
+    url(r'', include('polls.urls')),  # can specify here what you want endpoint to look like
     url(r'^admin/', admin.site.urls),
+    url(r'^search/', include('haystack.urls')),
 ]
