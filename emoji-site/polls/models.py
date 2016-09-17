@@ -6,8 +6,16 @@ class User(models.Model):
     email = models.CharField(max_length=100)
     password = models.CharField(max_length=18)
 
+    def __str__(self):
+        return self.email
+
 
 class Emoji(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
     datetime = models.DateTimeField()
     emoji = models.CharField(max_length=10)
+
+
+class Activity(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    datetime = models.DateTimeField()
+    emoji = models.ForeignKey(Emoji)
